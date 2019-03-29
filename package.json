@@ -5,7 +5,11 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "watch": "nodemon server.js"
+    "watch": "nodemon server.js",
+    "lint": "eslint **/*.js",
+    "jsdoc": "jsdoc -c ./docs/config/jsdoc.config.json",
+    "test": "jest --verbose",
+    "test-watch": "jest --watchAll --verbose"
   },
   "keywords": [],
   "author": "Code Fellows, LLC",
@@ -13,9 +17,15 @@
   "dependencies": {
     "dotenv": "^7.0.0",
     "ejs": "^2.6.1",
+    "eslint": "^5.15.3",
     "express": "^4.16.2",
+    "jest": "^24.5.0",
+    "lint": "^1.1.2",
     "method-override": "^3.0.0",
+    "mongodb-memory-server": "^4.2.1",
+    "mongoose": "^5.4.20",
     "pg": "^7.3.0",
-    "superagent": "^3.8.3"
+    "superagent": "^3.8.3",
+    "supertest": "^4.0.2"
   }
 }
