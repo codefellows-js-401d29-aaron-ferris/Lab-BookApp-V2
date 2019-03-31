@@ -1,0 +1,177 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "BookApp API",
+    "description": "Created to be used in tandem with goodreads API to store books in appropriate containers",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000/"
+    }
+  ],
+  "paths": {
+    "/books": {
+      "get": {
+        "description": "Get the all books ",
+        "responses": {
+          "200": {
+            "description": "All books retrieved",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/BooksList"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "description": "Create a new book",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewBook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Returned the created book",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Book"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/books/{id}": {
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "integer"
+          }
+        }
+      ],
+      "get": {
+        "description": "Get One book",
+        "responses": {
+          "200": {
+            "description": "Returned one book",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Book"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "description": "Delete One book",
+        "responses": {
+          "200": {
+            "description": "Deleted book and returned empty object",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Delete"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "description": "Replace a Book",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Book"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Returned the updated book",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Book"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "BooksList": {
+        "type": "array",
+        "example": [
+          {
+            "id": 1,
+            "title": "First Book",
+            "author": "First Author",
+            "isbn": 000-0-00-000000-0,
+            "image_url": "http://imageurl1.com/extension" ,
+            "description": "First book, by First author. About life",
+            "bookshelves": "shelf"
+          },
+          {
+            "id": 2,
+            "name": "Second Book",
+            "author": "Second Author",
+            "isbn": 111-1-11-111111-1,
+            "image_url": "http://imageurl2.com/extension" ,
+            "description": "Second book, by Second author. About stuff",
+            "bookshelves": "shelf"
+          }
+        ]
+      },
+      "Book": {
+        "type": "object",
+        "example": {
+          "id": 1,
+          "title": "First Book",
+          "author": "First Author",
+          "isbn": 000-0-00-000000-0,
+          "image_url": "http://imageurl1.com/extension" ,
+          "description": "First book, by First author. About life",
+          "bookshelves": "shelf"
+          }
+      },
+      "NewBook": {
+        "type": "object",
+        "example": {
+          "title": "First Book",
+          "author": "First Author",
+          "isbn": 000-0-00-000000-0,
+          "image_url": "http://imageurl1.com/extension" ,
+          "description": "First book, by First author. About life",
+          "bookshelves": "shelf"
+          }      
+        
+      },
+      "Delete": {
+        "type": "object",
+        "example": {}
+      }
+    }
+  }
+}

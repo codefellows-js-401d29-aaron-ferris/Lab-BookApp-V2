@@ -7,8 +7,8 @@ const cwd = process.cwd();
 // Application Dependencies
 const express = require('express');
 
-const routes = require( `${cwd}/src/API/pg.js` );
-// const routes = require( `${cwd}/src/API/mongo.js` );
+// const routes = require( `${cwd}/src/API/pg.js` );
+const routes = require( `${cwd}/src/API/mongo.js` );
 
 const notFound = require( `${cwd}/src/middleware/500.js` );
 
@@ -18,6 +18,7 @@ const app = express();
 // Application Middleware
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
+app.use('/docs', express.static('docs'));
 app.set('view engine', 'ejs');
 
 // Set the view engine for server-side templating
