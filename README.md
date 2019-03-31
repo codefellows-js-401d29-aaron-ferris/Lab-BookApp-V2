@@ -6,7 +6,7 @@
 ### Author: Aaron Ferris, Spencher Hirata & Jon Gentry
 
 ### Links and Resources
-* [repo](http://xyz.com)
+* [Pull Request](http://xyz.com)
 * [travis](http://xyz.com)
 * [back-end](http://xyz.com) (when applicable)
 * [front-end](http://xyz.com) (when applicable)
