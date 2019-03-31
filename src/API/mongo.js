@@ -72,46 +72,11 @@ function getBook(request, response) {
 }
 
 function getBookshelves() {
-  // // let SQL = 'SELECT DISTINCT bookshelf FROM books ORDER BY bookshelf;';
-  // let SQL = 'SELECT DISTINCT id, name FROM bookshelves ORDER BY name;';
-
-  // return client.query(SQL);
   bookshelfDb.get()
     .then(results => {
       return results;
     })
 }
-// instantiate books function
-// get all bookshelves
-// with these shelves
-// join the bookshelves  and books WHERE THE BOOK ID MATCHES
-// with the request parameters
-// 
-
-// function getBook(request, response) {
-//   getBookshelves()
-//     .then(shelves => {
-
-//       let SQL = 'SELECT books.*, bookshelves.name FROM books INNER JOIN bookshelves on books.bookshelf_id=bookshelves.id WHERE books.id=$1;';
-//       let values = [request.params.id];
-//       client.query(SQL, values)
-//         .then(result => {
-//           console.log(shelves.rows)
-//           response.render('pages/books/show', { book: result.rows[0], bookshelves: shelves.rows })
-//         })
-//         .catch(err => handleError(err, response));
-//     })
-// }
-
-// function getBookshelves() {
-//   // let SQL = 'SELECT DISTINCT bookshelf FROM books ORDER BY bookshelf;';
-//   let SQL = 'SELECT DISTINCT id, name FROM bookshelves ORDER BY name;';
-
-//   return client.query(SQL);
-// }
-
-
-
 
 function createShelf(shelf) {
   let normalizedShelf = shelf.toLowerCase();
@@ -132,7 +97,7 @@ function createBook(request, response) {
     .then(bookshelf => {
       request.body.shelf = bookshelf._id;
       bookDb.post(request.body)
-        .then(result => response.redirect(`/books/${result.id}`))
+        .then(result => response.redirect(`/books/${result._id}`))
         .catch(err => handleError(err, response));
     })
 

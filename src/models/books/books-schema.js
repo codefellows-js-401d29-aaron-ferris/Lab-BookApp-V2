@@ -7,7 +7,7 @@ const bookshelf = require('../bookshelfs/bookshelf-schema.js');
 const books = mongoose.Schema({
   title: { type:String, required:true },
   author: { type:String, required:true },
-  isbn: { type:Number, required:true },
+  isbn: { type:String, required:true },
   image_url: {type:String, required:true},
   description: {type:String, required:true},
   id: {type:String, required:true},
