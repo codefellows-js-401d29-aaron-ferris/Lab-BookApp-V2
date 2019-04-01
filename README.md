@@ -185,5 +185,5 @@ starts up the app
 * Unsure how tests are (for spencer to input)
 
 #### UML
-![UML]('../IMG_6932')
-![UML2]('../IMG_933')
+![UML](assets/IMG_6932.jpg)
+![UML2](assets/IMG_6933.jpg)
