@@ -3,6 +3,7 @@
 /** 
  * Start point for app 
  * @module /
+ * decides if we are using PSQL or MONGO
  */
 
 require('dotenv').config();

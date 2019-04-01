@@ -1,6 +1,7 @@
 'use strict';
 /**
- * this module is used render the page when another page defines when to thow error
+ * this module is used render the page when another page throws an error
+ * renders error page
  */
 
 

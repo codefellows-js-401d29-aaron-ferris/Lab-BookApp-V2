@@ -1,5 +1,7 @@
 'use strict';
-
+/** 
+ * defines the structre of the books class in pg
+ */
 module.exports = function Book(info) {
   let placeholderImage = 'https://i.imgur.com/J5LVHEL.jpg';
 

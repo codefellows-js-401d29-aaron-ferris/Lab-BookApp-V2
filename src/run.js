@@ -1,6 +1,10 @@
 'use strict';
 /**
  * This module calls all of the separat e modules that have been used to define the app.
+ * exports the information.
+ * Sets up the jsdocs.
+ * sets up the ejs files to render.
+ * Starts the app listening.
  */
 const cwd = process.cwd();
 
@@ -27,7 +31,9 @@ app.set('view engine', 'ejs');
 app.use(routes);
 
 app.use(notFound);
-
+/**
+ * Starts up the app
+ */
 let start = (port = process.env.PORT) => {
   app.listen(port, () => {
     console.log(`Listening on port: ${port}`);
