@@ -7,12 +7,11 @@
 
 ### Links and Resources
 * [Pull Request](https://github.com/codefellows-js-401d29-aaron-ferris/Lab-BookApp-V2/pull/2)
-* [travis](http://xyz.com) not setup
-* [front-end](http://xyz.com) (I do not have the link to heroku)
+* [travis](https://www.travis-ci.com/codefellows-js-401d29-aaron-ferris/Lab-BookApp-V2) not setup
+* [front-end](https://js401d29bookapp.herokuapp.com/) (I do not have the link to heroku)
 
 #### Documentation
-* [swagger](http://xyz.com) (extension will be posted when heroku is made)
-* [jsdoc](http://xyz.com) (extension will be posted when heroku is made)
+* [jsdoc](https://js401d29bookapp.herokuapp.com/docs/) (extension will be posted when heroku is made)
 
 ### Modules
 #### `Server.js`
